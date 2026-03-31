@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard RH & Effectifs — Chanel Epanya</title>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #080810; --bg2: #0f0f1a; --card: rgba(255,255,255,0.04);
+  --border: rgba(255,255,255,0.08); --v: #8b5cf6; --v2: #a78bfa;
+  --g: #06d6a0; --o: #f97316; --pk: #f472b6;
+  --text: #f1f0fb; --muted: #6b6a85; --muted2: #3d3c55;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Raleway',sans-serif;line-height:1.7}
+body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(139,92,246,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(139,92,246,0.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:rgba(8,8,16,0.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{font-weight:800;font-size:16px;text-decoration:none;color:var(--text);display:flex;align-items:center;gap:8px}
+.nav-dot{width:7px;height:7px;background:var(--g);border-radius:50%;box-shadow:0 0 8px var(--g);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+.nav-back{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);text-decoration:none;transition:color 0.2s;border:1px solid var(--border);padding:6px 14px;border-radius:8px}
+.nav-back:hover{color:var(--text);border-color:rgba(139,92,246,0.3)}
+
+/* HERO */
+.hero{padding:120px 0 60px;max-width:1100px;margin:0 auto;padding-left:40px;padding-right:40px;position:relative;z-index:1}
+.hero-top{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.proj-num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--v2);background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.2);padding:3px 10px;border-radius:4px;letter-spacing:1px}
+.proj-cat{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--g);background:rgba(6,214,160,0.08);border:1px solid rgba(6,214,160,0.2);padding:3px 10px;border-radius:4px}
+.hero h1{font-size:clamp(36px,5vw,60px);font-weight:900;letter-spacing:-1px;line-height:1.05;margin-bottom:20px}
+.hero h1 span{background:linear-gradient(135deg,var(--v2),var(--g));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:16px;color:var(--muted);max-width:640px;margin-bottom:32px;line-height:1.8}
+.hero-meta{display:flex;gap:24px;flex-wrap:wrap}
+.meta-item{display:flex;align-items:center;gap:8px;font-size:13px}
+.meta-icon{font-size:16px}
+.meta-label{color:var(--muted)}
+.meta-value{font-weight:600}
+
+/* KPI STRIP */
+.kpi-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;max-width:1100px;margin:0 auto 60px;padding:0 40px;position:relative;z-index:1}
+.kpi{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center;transition:all 0.25s}
+.kpi:hover{border-color:rgba(139,92,246,0.3);transform:translateY(-3px)}
+.kpi-val{font-size:32px;font-weight:900;line-height:1;margin-bottom:4px}
+.kpi-lbl{font-size:11px;color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:0.5px}
+.kv-purple{background:linear-gradient(135deg,var(--v2),var(--pk));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.kv-teal{background:linear-gradient(135deg,var(--g),#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.kv-orange{background:linear-gradient(135deg,var(--o),var(--pk));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* DASHBOARD PREVIEW */
+.section{max-width:1100px;margin:0 auto 64px;padding:0 40px;position:relative;z-index:1}
+.section-label{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--v2);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.section-label::before{content:'//';color:var(--muted2)}
+.section-title{font-size:26px;font-weight:800;letter-spacing:-0.5px;margin-bottom:24px}
+
+/* DASHBOARD MOCKUP */
+.dashboard-mockup{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:28px;overflow:hidden}
+.db-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.db-title{font-size:16px;font-weight:700}
+.db-filters{display:flex;gap:8px}
+.db-filter{font-size:11px;padding:5px 12px;border-radius:6px;background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.2);color:var(--v2);font-weight:500}
+.db-filter.active{background:var(--v);color:white;border-color:var(--v)}
+
+/* Mini charts */
+.db-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:14px}
+.db-row-2{display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px}
+.db-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:16px}
+.db-card-title{font-size:11px;color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px}
+.db-stat{font-size:28px;font-weight:900}
+.db-trend{font-size:11px;margin-top:4px}
+.trend-up{color:#4ade80}
+.trend-down{color:#f87171}
+
+/* Bar chart */
+.bar-chart{display:flex;align-items:flex-end;gap:6px;height:80px}
+.bar-col{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1}
+.bar-rect{width:100%;border-radius:4px 4px 0 0;transition:height 0.8s ease;min-width:18px}
+.bar-lbl{font-size:9px;color:var(--muted)}
+
+/* Donut */
+.donut-wrap{display:flex;align-items:center;gap:16px}
+.donut-svg{flex-shrink:0}
+.donut-legend{display:flex;flex-direction:column;gap:6px}
+.dl-item{display:flex;align-items:center;gap:6px;font-size:11px}
+.dl-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+
+/* Progress list */
+.prog-list{display:flex;flex-direction:column;gap:8px}
+.prog-item{display:flex;flex-direction:column;gap:3px}
+.prog-header{display:flex;justify-content:space-between;font-size:11px}
+.prog-bar{height:5px;background:rgba(255,255,255,0.06);border-radius:10px;overflow:hidden}
+.prog-fill{height:100%;border-radius:10px;background:linear-gradient(90deg,var(--v),var(--pk))}
+
+/* LINE chart simulation */
+.line-chart{position:relative;height:80px}
+.line-chart svg{width:100%;height:100%}
+
+/* CONTENT SECTIONS */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.content-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;transition:all 0.25s}
+.content-card:hover{border-color:rgba(139,92,246,0.25);transform:translateY(-2px)}
+.cc-icon{font-size:28px;margin-bottom:14px}
+.cc-title{font-size:15px;font-weight:700;margin-bottom:8px}
+.cc-text{font-size:13px;color:var(--muted);line-height:1.7}
+
+/* METHODOLOGY */
+.steps{display:flex;flex-direction:column;gap:0}
+.step{display:flex;gap:20px;padding-bottom:32px;position:relative}
+.step:last-child{padding-bottom:0}
+.step-left{display:flex;flex-direction:column;align-items:center}
+.step-num{width:36px;height:36px;border-radius:50%;background:rgba(139,92,246,0.15);border:1px solid rgba(139,92,246,0.3);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--v2);flex-shrink:0}
+.step-line{width:1px;flex:1;background:linear-gradient(180deg,rgba(139,92,246,0.3),transparent);margin-top:8px}
+.step-content{flex:1;padding-top:6px}
+.step-title{font-size:15px;font-weight:700;margin-bottom:6px}
+.step-desc{font-size:13px;color:var(--muted);line-height:1.7}
+.code-block{background:#0d0d18;border:1px solid rgba(139,92,246,0.15);border-radius:10px;padding:14px 16px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#a78bfa;margin-top:10px;line-height:1.7;overflow-x:auto}
+.code-comment{color:var(--muted2)}
+.code-keyword{color:var(--pk)}
+.code-func{color:var(--g)}
+.code-val{color:#fbbf24}
+
+/* RESULTS */
+.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.result-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;text-align:center}
+.result-num{font-size:40px;font-weight:900;line-height:1;margin-bottom:6px}
+.result-desc{font-size:12px;color:var(--muted);line-height:1.6}
+
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-size:11px;font-weight:600;padding:5px 13px;border-radius:100px;background:rgba(139,92,246,0.1);color:var(--v2);border:1px solid rgba(139,92,246,0.2)}
+.tag.g{background:rgba(6,214,160,0.08);color:var(--g);border-color:rgba(6,214,160,0.2)}
+.tag.o{background:rgba(249,115,22,0.08);color:#fb923c;border-color:rgba(249,115,22,0.2)}
+
+/* DOWNLOAD */
+.dl-section{background:linear-gradient(135deg,rgba(139,92,246,0.1),rgba(6,214,160,0.05));border:1px solid rgba(139,92,246,0.2);border-radius:20px;padding:40px;display:flex;align-items:center;justify-content:space-between;gap:32px}
+.dl-text h3{font-size:22px;font-weight:800;margin-bottom:8px}
+.dl-text p{font-size:14px;color:var(--muted)}
+.dl-btns{display:flex;gap:12px;flex-shrink:0}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;border:none;transition:all 0.25s;text-decoration:none;font-family:'Raleway',sans-serif}
+.btn-v{background:var(--v);color:white}
+.btn-v:hover{background:#7c3aed;transform:translateY(-1px);box-shadow:0 8px 30px rgba(139,92,246,0.35)}
+.btn-out{background:transparent;border:1px solid var(--border);color:var(--text)}
+.btn-out:hover{border-color:rgba(139,92,246,0.3);background:rgba(139,92,246,0.05)}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;position:relative;z-index:1}
+footer p{font-size:12px;color:var(--muted)}
+
+/* Animations */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+.fade-in.visible{opacity:1;transform:none}
+
+@media(max-width:900px){
+  nav{padding:14px 20px}
+  .hero,.section{padding-left:20px;padding-right:20px}
+  .kpi-strip{grid-template-columns:repeat(2,1fr);padding:0 20px}
+  .db-row{grid-template-columns:1fr 1fr}
+  .db-row-2{grid-template-columns:1fr}
+  .two-col,.three-col,.result-grid{grid-template-columns:1fr}
+  .dl-section{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-dot"></div>
+    CE · Portfolio
+  </a>
+  <a href="index.html" class="nav-back">← Retour au portfolio</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero fade-in">
+  <div class="hero-top">
+    <span class="proj-num">PROJET 01 / 05</span>
+    <span class="proj-cat">Power BI · RH</span>
+  </div>
+  <h1>Dashboard RH<br><span>& Effectifs</span></h1>
+  <p class="hero-sub">
+    Analyse complète des ressources humaines d'une entreprise fictive de 200 employés : 
+    turnover, absentéisme, répartition des effectifs et satisfaction collaborateurs. 
+    Conçu pour aider les RH à piloter leurs décisions stratégiques.
+  </p>
+  <div class="hero-meta">
+    <div class="meta-item"><span class="meta-icon">🛠️</span><span class="meta-label">Outils :</span><span class="meta-value">Power BI Desktop · Power Query · DAX</span></div>
+    <div class="meta-item"><span class="meta-icon">📅</span><span class="meta-label">Durée :</span><span class="meta-value">3 jours</span></div>
+    <div class="meta-item"><span class="meta-icon">📊</span><span class="meta-label">Dataset :</span><span class="meta-value">200 employés · données simulées</span></div>
+  </div>
+</div>
+
+<!-- KPIs -->
+<div class="kpi-strip fade-in">
+  <div class="kpi"><div class="kpi-val kv-purple">200</div><div class="kpi-lbl">Employés total</div></div>
+  <div class="kpi"><div class="kpi-val kv-orange">41.5%</div><div class="kpi-lbl">Taux de turnover</div></div>
+  <div class="kpi"><div class="kpi-val kv-teal">117</div><div class="kpi-lbl">Employés actifs</div></div>
+  <div class="kpi"><div class="kpi-val kv-purple">8.2j</div><div class="kpi-lbl">Abs. moyenne/an</div></div>
+  <div class="kpi"><div class="kpi-val kv-teal">3.7/5</div><div class="kpi-lbl">Score satisfaction</div></div>
+</div>
+
+<!-- DASHBOARD MOCKUP -->
+<div class="section fade-in">
+  <div class="section-label">aperçu du dashboard</div>
+  <div class="section-title">Vue d'ensemble du dashboard Power BI</div>
+
+  <div class="dashboard-mockup">
+    <div class="db-header">
+      <div class="db-title">📊 Dashboard RH & Effectifs — 2024</div>
+      <div class="db-filters">
+        <span class="db-filter active">Tous</span>
+        <span class="db-filter">RH</span>
+        <span class="db-filter">IT</span>
+        <span class="db-filter">Commercial</span>
+      </div>
+    </div>
+
+    <!-- Row 1: KPI cards -->
+    <div class="db-row">
+      <div class="db-card">
+        <div class="db-card-title">Effectif actif</div>
+        <div class="db-stat" style="color:var(--v2)">117</div>
+        <div class="db-trend trend-down">▼ 3.2% vs mois dernier</div>
+      </div>
+      <div class="db-card">
+        <div class="db-card-title">Turnover annuel</div>
+        <div class="db-stat" style="color:var(--o)">41.5%</div>
+        <div class="db-trend trend-down">▲ +2.1pts vs objectif</div>
+      </div>
+      <div class="db-card">
+        <div class="db-card-title">Abs. moyenne</div>
+        <div class="db-stat" style="color:var(--pk)">8.2j</div>
+        <div class="db-trend trend-up">▼ -0.8j vs N-1</div>
+      </div>
+      <div class="db-card">
+        <div class="db-card-title">Satisfaction moy.</div>
+        <div class="db-stat" style="color:var(--g)">3.7</div>
+        <div class="db-trend trend-up">▲ +0.2 vs N-1</div>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="db-row-2">
+      <!-- Bar chart par département -->
+      <div class="db-card">
+        <div class="db-card-title">Effectifs par département</div>
+        <div class="bar-chart" id="bar-chart">
+          <div class="bar-col"><div class="bar-rect" style="height:65%;background:linear-gradient(180deg,var(--v),rgba(139,92,246,0.4))"></div><div class="bar-lbl">RH</div></div>
+          <div class="bar-col"><div class="bar-rect" style="height:80%;background:linear-gradient(180deg,var(--v),rgba(139,92,246,0.4))"></div><div class="bar-lbl">Finance</div></div>
+          <div class="bar-col"><div class="bar-rect" style="height:95%;background:linear-gradient(180deg,var(--g),rgba(6,214,160,0.4))"></div><div class="bar-lbl">IT</div></div>
+          <div class="bar-col"><div class="bar-rect" style="height:100%;background:linear-gradient(180deg,var(--g),rgba(6,214,160,0.4))"></div><div class="bar-lbl">Comm.</div></div>
+          <div class="bar-col"><div class="bar-rect" style="height:70%;background:linear-gradient(180deg,var(--pk),rgba(244,114,182,0.4))"></div><div class="bar-lbl">Ops</div></div>
+          <div class="bar-col"><div class="bar-rect" style="height:55%;background:linear-gradient(180deg,var(--o),rgba(249,115,22,0.4))"></div><div class="bar-lbl">Mktg</div></div>
+          <div class="bar-col"><div class="bar-rect" style="height:40%;background:linear-gradient(180deg,var(--o),rgba(249,115,22,0.4))"></div><div class="bar-lbl">Jur.</div></div>
+          <div class="bar-col"><div class="bar-rect" style="height:60%;background:linear-gradient(180deg,var(--v2),rgba(167,139,250,0.4))"></div><div class="bar-lbl">Log.</div></div>
+        </div>
+      </div>
+
+      <!-- Donut contrats -->
+      <div class="db-card">
+        <div class="db-card-title">Répartition contrats</div>
+        <div class="donut-wrap">
+          <svg class="donut-svg" width="70" height="70" viewBox="0 0 70 70">
+            <circle cx="35" cy="35" r="25" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="10"/>
+            <circle cx="35" cy="35" r="25" fill="none" stroke="#8b5cf6" stroke-width="10" stroke-dasharray="94 63" stroke-dashoffset="0" transform="rotate(-90 35 35)"/>
+            <circle cx="35" cy="35" r="25" fill="none" stroke="#06d6a0" stroke-width="10" stroke-dasharray="28 129" stroke-dashoffset="-94" transform="rotate(-90 35 35)"/>
+            <circle cx="35" cy="35" r="25" fill="none" stroke="#f97316" stroke-width="10" stroke-dasharray="35 122" stroke-dashoffset="-122" transform="rotate(-90 35 35)"/>
+          </svg>
+          <div class="donut-legend">
+            <div class="dl-item"><div class="dl-dot" style="background:var(--v)"></div><span>CDI — 60%</span></div>
+            <div class="dl-item"><div class="dl-dot" style="background:var(--g)"></div><span>CDD — 18%</span></div>
+            <div class="dl-item"><div class="dl-dot" style="background:var(--o)"></div><span>Alternance — 22%</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top absences -->
+      <div class="db-card">
+        <div class="db-card-title">Absences / département</div>
+        <div class="prog-list">
+          <div class="prog-item">
+            <div class="prog-header"><span>Operations</span><span>12.4j</span></div>
+            <div class="prog-bar"><div class="prog-fill" style="width:100%"></div></div>
+          </div>
+          <div class="prog-item">
+            <div class="prog-header"><span>Logistique</span><span>10.1j</span></div>
+            <div class="prog-bar"><div class="prog-fill" style="width:81%"></div></div>
+          </div>
+          <div class="prog-item">
+            <div class="prog-header"><span>Commercial</span><span>8.7j</span></div>
+            <div class="prog-bar"><div class="prog-fill" style="width:70%;background:linear-gradient(90deg,var(--g),#06b6d4)"></div></div>
+          </div>
+          <div class="prog-item">
+            <div class="prog-header"><span>RH</span><span>6.2j</span></div>
+            <div class="prog-bar"><div class="prog-fill" style="width:50%;background:linear-gradient(90deg,var(--g),#06b6d4)"></div></div>
+          </div>
+          <div class="prog-item">
+            <div class="prog-header"><span>IT</span><span>5.8j</span></div>
+            <div class="prog-bar"><div class="prog-fill" style="width:47%;background:linear-gradient(90deg,var(--o),var(--pk))"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTEXTE -->
+<div class="section fade-in">
+  <div class="section-label">contexte du projet</div>
+  <div class="section-title">Problématique métier</div>
+  <div class="two-col">
+    <div class="content-card">
+      <div class="cc-icon">🎯</div>
+      <div class="cc-title">Objectif</div>
+      <div class="cc-text">Fournir à la direction RH un outil de pilotage centralisé permettant de suivre en temps réel les indicateurs clés : turnover, absentéisme, satisfaction et répartition des effectifs par département, contrat et localisation.</div>
+    </div>
+    <div class="content-card">
+      <div class="cc-icon">❗</div>
+      <div class="cc-title">Problème identifié</div>
+      <div class="cc-text">Les données RH étaient dispersées dans plusieurs fichiers Excel sans consolidation automatique. La direction perdait plusieurs heures par semaine à compiler manuellement des rapports statiques, sans capacité d'analyse dynamique.</div>
+    </div>
+    <div class="content-card">
+      <div class="cc-icon">💡</div>
+      <div class="cc-title">Solution apportée</div>
+      <div class="cc-text">Création d'un dashboard Power BI interactif avec actualisation automatique des données via Power Query. 5 pages thématiques : Vue Globale, Turnover, Absentéisme, Satisfaction et Pyramide des âges.</div>
+    </div>
+    <div class="content-card">
+      <div class="cc-icon">📈</div>
+      <div class="cc-title">Impact mesuré</div>
+      <div class="cc-text">Réduction du temps de reporting de ~4h à ~20min par semaine. Identification d'un pic d'absentéisme dans le département Operations, permettant une action corrective ciblée.</div>
+    </div>
+  </div>
+</div>
+
+<!-- MÉTHODOLOGIE -->
+<div class="section fade-in">
+  <div class="section-label">méthodologie</div>
+  <div class="section-title">Comment j'ai construit ce projet</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-left"><div class="step-num">01</div><div class="step-line"></div></div>
+      <div class="step-content">
+        <div class="step-title">Collecte & préparation des données</div>
+        <div class="step-desc">Génération d'un dataset réaliste de 200 employés avec Python (pandas). Nettoyage et transformation via Power Query : gestion des valeurs manquantes, normalisation des dates, création de colonnes calculées.</div>
+        <div class="code-block"><span class="code-comment">// Power Query — Colonne calculée : tranche d'âge</span><br>= Table.AddColumn(Source, "Tranche_age",<br>&nbsp;&nbsp;each if [Age] < 30 then "< 30 ans"<br>&nbsp;&nbsp;else if [Age] < 45 then "30-44 ans"<br>&nbsp;&nbsp;else "45 ans +")</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-left"><div class="step-num">02</div><div class="step-line"></div></div>
+      <div class="step-content">
+        <div class="step-title">Modélisation des données</div>
+        <div class="step-desc">Création d'un modèle en étoile avec table de faits (employés) et tables de dimensions (départements, villes, périodes). Relations définies pour permettre le filtrage croisé entre visuels.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-left"><div class="step-num">03</div><div class="step-line"></div></div>
+      <div class="step-content">
+        <div class="step-title">Création des mesures DAX</div>
+        <div class="step-desc">Écriture des KPIs principaux en DAX : taux de turnover, taux d'absentéisme, ancienneté moyenne, score de satisfaction pondéré.</div>
+        <div class="code-block"><span class="code-comment">// DAX — Taux de turnover</span><br><span class="code-keyword">Taux_Turnover</span> = <br>&nbsp;&nbsp;<span class="code-func">DIVIDE</span>(<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-func">CALCULATE</span>(<span class="code-func">COUNTROWS</span>(Employes),<br>&nbsp;&nbsp;&nbsp;&nbsp;Employes[Statut] <span class="code-keyword">IN</span> {<span class="code-val">"Démissionnaire"</span>,<span class="code-val">"Licencié"</span>}),<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-func">COUNTROWS</span>(Employes)<br>&nbsp;&nbsp;)</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-left"><div class="step-num">04</div></div>
+      <div class="step-content">
+        <div class="step-title">Design & mise en page Power BI</div>
+        <div class="step-desc">Conception d'un thème dark personnalisé cohérent avec la charte graphique. Utilisation de segments dynamiques, de boutons de navigation entre pages et de tooltips enrichis pour améliorer l'expérience utilisateur.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RÉSULTATS -->
+<div class="section fade-in">
+  <div class="section-label">résultats & insights</div>
+  <div class="section-title">Ce que révèle l'analyse</div>
+  <div class="result-grid">
+    <div class="result-card">
+      <div class="result-num" style="color:var(--o)">41.5%</div>
+      <div class="result-desc">Taux de turnover global — significativement au-dessus de la moyenne sectorielle (15%), principalement dû aux CDD et alternances</div>
+    </div>
+    <div class="result-card">
+      <div class="result-num" style="color:var(--pk)">Operations</div>
+      <div class="result-desc">Département avec le plus fort absentéisme (12.4j/an vs 8.2j moyenne) — nécessite une investigation sur les conditions de travail</div>
+    </div>
+    <div class="result-card">
+      <div class="result-num" style="color:var(--g)">3.7/5</div>
+      <div class="result-desc">Score de satisfaction moyen — stable mais en dessous de l'objectif de 4.0, avec une corrélation forte avec l'ancienneté</div>
+    </div>
+    <div class="result-card">
+      <div class="result-num" style="color:var(--v2)">35-44</div>
+      <div class="result-desc">Tranche d'âge dominante (38% des effectifs), avec un risque de départ à la retraite concentré sur 2030-2035</div>
+    </div>
+    <div class="result-card">
+      <div class="result-num" style="color:var(--o)">IT</div>
+      <div class="result-desc">Département avec le plus fort taux de CDI (72%) et le meilleur score de satisfaction (4.1/5) — modèle à répliquer</div>
+    </div>
+    <div class="result-card">
+      <div class="result-num" style="color:var(--g)">-4h</div>
+      <div class="result-desc">Temps de reporting économisé chaque semaine grâce à l'automatisation et à la centralisation des données</div>
+    </div>
+  </div>
+</div>
+
+<!-- STACK & TÉLÉCHARGEMENT -->
+<div class="section fade-in">
+  <div class="section-label">stack technique</div>
+  <div class="three-col" style="margin-bottom:40px">
+    <div class="content-card">
+      <div class="cc-icon">📊</div>
+      <div class="cc-title">Power BI Desktop</div>
+      <div class="cc-text">Création du rapport, visuels natifs et personnalisés, thème JSON, navigation inter-pages, publication sur Power BI Service.</div>
+      <div class="tags"><span class="tag">Rapport .pbix</span><span class="tag">Thème dark</span></div>
+    </div>
+    <div class="content-card">
+      <div class="cc-icon">🔄</div>
+      <div class="cc-title">Power Query (M)</div>
+      <div class="cc-text">Connexion à la source CSV, nettoyage des données, création de colonnes calculées, gestion des types et des erreurs.</div>
+      <div class="tags"><span class="tag g">Langage M</span><span class="tag g">ETL</span></div>
+    </div>
+    <div class="content-card">
+      <div class="cc-icon">📐</div>
+      <div class="cc-title">DAX</div>
+      <div class="cc-text">8 mesures personnalisées : turnover, absentéisme, satisfaction pondérée, ancienneté moyenne, pyramide des âges.</div>
+      <div class="tags"><span class="tag o">8 mesures</span><span class="tag o">Modèle étoile</span></div>
+    </div>
+  </div>
+
+  <div class="dl-section">
+    <div class="dl-text">
+      <h3>Télécharger les ressources</h3>
+      <p>Dataset CSV + fichier Power BI (.pbix) + documentation complète</p>
+    </div>
+    <div class="dl-btns">
+      <a href="dataset_rh.csv" download class="btn btn-out">⬇ Dataset CSV</a>
+      <a href="#" class="btn btn-v">📊 Voir le rapport .pbix</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 Chanel Epanya · Projet 01/05 Power BI</p>
+  <a href="index.html" style="font-size:12px;color:var(--v2);text-decoration:none">← Retour au portfolio</a>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold: 0.1});
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

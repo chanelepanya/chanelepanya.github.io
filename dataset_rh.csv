@@ -1,0 +1,201 @@
+ID;Nom;Genre;Age;Département;Poste;Contrat;Statut;Ville;Salaire;Ancienneté_ans;Jours_absence;Satisfaction_score;Date_entrée;Date_sortie
+EMP0001;Employé 1;F;28;Finance;Analyste Financier;CDI;Actif;Paris;39395;17;18;3.6;21/12/2007;
+EMP0002;Employé 2;M;57;Finance;Contrôleur de Gestion;CDI;Démissionnaire;Lyon;82987;6;7;3.6;13/08/2018;30/12/2024
+EMP0003;Employé 3;F;43;IT;DSI;CDI;Actif;Paris;40156;3;12;2.7;09/07/2021;
+EMP0004;Employé 4;F;27;Operations;Opérateur;CDD;Démissionnaire;Marseille;66427;17;20;4.0;04/07/2007;06/08/2024
+EMP0005;Employé 5;F;40;Commercial;Commercial;CDI;Licencié;Toulouse;58512;2;3;3.5;14/05/2022;22/07/2024
+EMP0006;Employé 6;F;39;Marketing;Community Manager;CDI;Actif;Lille;37358;20;19;4.1;07/04/2004;
+EMP0007;Employé 7;M;57;Commercial;Account Manager;CDD;Actif;Lille;70504;7;24;4.4;07/09/2017;
+EMP0008;Employé 8;F;58;RH;Assistant RH;CDD;Actif;Paris;55869;10;20;3.7;08/02/2014;
+EMP0009;Employé 9;F;57;Logistique;Logisticien;CDI;Actif;Lille;62438;17;23;4.0;13/03/2007;
+EMP0010;Employé 10;M;27;Juridique;Responsable Juridique;CDI;Actif;Marseille;42371;1;4;4.1;18/01/2023;
+EMP0011;Employé 11;M;51;Juridique;Avocat interne;CDI;Actif;Nantes;60953;16;17;4.7;30/12/2008;
+EMP0012;Employé 12;M;32;Finance;Comptable;CDI;Actif;Marseille;28425;14;23;4.7;23/08/2010;
+EMP0013;Employé 13;M;34;IT;Développeur;CDI;Retraité;Nantes;77009;4;24;2.9;05/04/2020;31/12/2024
+EMP0014;Employé 14;M;41;Marketing;CMO;CDI;Actif;Toulouse;35592;7;7;4.7;23/11/2017;
+EMP0015;Employé 15;M;30;Finance;DAF;CDI;Retraité;Toulouse;90296;4;17;2.9;06/04/2020;29/07/2024
+EMP0016;Employé 16;F;41;Juridique;Juriste;Alternance;Retraité;Lille;76944;12;14;4.7;17/05/2012;01/12/2024
+EMP0017;Employé 17;F;57;Commercial;Account Manager;CDI;Actif;Nantes;56864;7;0;2.7;13/02/2017;
+EMP0018;Employé 18;M;54;RH;Responsable RH;CDI;Actif;Lyon;64500;7;21;3.7;01/04/2017;
+EMP0019;Employé 19;M;48;IT;DSI;CDI;Retraité;Toulouse;40363;6;3;4.1;05/07/2018;14/09/2024
+EMP0020;Employé 20;F;47;Juridique;Responsable Juridique;CDI;Licencié;Lyon;42322;10;7;3.0;04/04/2014;08/09/2024
+EMP0021;Employé 21;M;26;IT;DSI;CDI;Actif;Paris;40833;14;1;4.1;03/04/2010;
+EMP0022;Employé 22;M;52;RH;Chargé RH;CDI;Actif;Marseille;80565;6;1;2.9;01/01/2019;
+EMP0023;Employé 23;M;57;Juridique;Responsable Juridique;CDD;Actif;Lille;48289;15;6;3.2;06/12/2009;
+EMP0024;Employé 24;M;54;RH;Assistant RH;CDI;Actif;Marseille;48635;16;1;4.9;24/11/2008;
+EMP0025;Employé 25;F;29;IT;Développeur;Alternance;Actif;Marseille;60271;18;18;4.0;22/02/2006;
+EMP0026;Employé 26;M;38;Finance;DAF;Alternance;Démissionnaire;Bordeaux;69180;6;7;3.2;27/10/2018;13/07/2024
+EMP0027;Employé 27;F;51;Operations;Directeur Opérations;CDI;Retraité;Lyon;41104;19;2;3.8;21/04/2005;25/10/2024
+EMP0028;Employé 28;M;32;IT;Chef de Projet IT;CDI;Actif;Bordeaux;67651;14;19;5.0;04/02/2010;
+EMP0029;Employé 29;M;28;RH;Assistant RH;CDI;Actif;Lyon;48374;17;8;3.2;20/09/2007;
+EMP0030;Employé 30;M;25;Marketing;Community Manager;CDI;Démissionnaire;Bordeaux;83518;2;8;2.6;15/07/2022;28/11/2024
+EMP0031;Employé 31;M;22;Operations;Responsable Opérations;CDD;Démissionnaire;Nantes;37862;3;22;4.8;28/03/2021;22/12/2024
+EMP0032;Employé 32;F;45;Marketing;Community Manager;CDD;Actif;Bordeaux;74898;1;6;4.2;25/01/2023;
+EMP0033;Employé 33;M;31;Finance;Comptable;Alternance;Retraité;Nantes;49299;7;25;4.5;05/06/2017;25/12/2024
+EMP0034;Employé 34;F;32;IT;Chef de Projet IT;CDD;Retraité;Bordeaux;78140;3;1;4.6;10/09/2021;10/11/2024
+EMP0035;Employé 35;F;23;Logistique;Responsable Logistique;CDI;Retraité;Paris;80227;6;10;3.2;28/11/2018;21/10/2024
+EMP0036;Employé 36;F;38;Marketing;CMO;Alternance;Actif;Lyon;62795;5;1;2.8;25/05/2019;
+EMP0037;Employé 37;M;46;Marketing;Responsable Marketing;CDD;Démissionnaire;Lyon;52914;18;8;2.6;27/05/2006;31/12/2024
+EMP0038;Employé 38;M;42;Commercial;Directeur Commercial;CDD;Actif;Nantes;67363;3;16;3.3;06/06/2021;
+EMP0039;Employé 39;F;48;Marketing;CMO;CDI;Démissionnaire;Paris;50810;12;19;3.9;10/06/2012;13/08/2024
+EMP0040;Employé 40;M;59;RH;Assistant RH;CDI;Actif;Toulouse;70237;19;14;3.6;25/01/2005;
+EMP0041;Employé 41;F;54;Commercial;Chargé de clientèle;CDI;Licencié;Bordeaux;71933;20;2;4.5;07/09/2004;12/07/2024
+EMP0042;Employé 42;F;37;Operations;Responsable Opérations;CDI;Actif;Lyon;37545;15;14;3.5;16/02/2009;
+EMP0043;Employé 43;F;22;Commercial;Chargé de clientèle;CDD;Actif;Paris;83724;3;7;2.9;10/01/2021;
+EMP0044;Employé 44;F;30;Logistique;Logisticien;Alternance;Actif;Marseille;69588;14;24;4.7;25/02/2010;
+EMP0045;Employé 45;M;38;Juridique;Avocat interne;CDD;Actif;Marseille;64347;7;24;4.4;29/04/2017;
+EMP0046;Employé 46;M;39;Commercial;Directeur Commercial;CDD;Actif;Paris;69904;10;17;2.7;18/10/2014;
+EMP0047;Employé 47;F;48;Commercial;Chargé de clientèle;CDI;Licencié;Lyon;71369;13;17;3.7;04/12/2011;09/11/2024
+EMP0048;Employé 48;F;58;Juridique;Responsable Juridique;Alternance;Licencié;Toulouse;90518;12;0;4.9;04/08/2012;23/09/2024
+EMP0049;Employé 49;M;53;Juridique;Avocat interne;Alternance;Retraité;Paris;63774;7;13;3.7;17/06/2017;06/10/2024
+EMP0050;Employé 50;M;61;Juridique;Avocat interne;CDI;Retraité;Paris;31534;17;12;4.0;31/01/2007;25/12/2024
+EMP0051;Employé 51;M;25;Finance;DAF;CDI;Retraité;Paris;77689;8;10;3.0;19/07/2016;06/10/2024
+EMP0052;Employé 52;F;23;Juridique;Responsable Juridique;CDD;Actif;Marseille;34826;17;11;3.1;01/12/2007;
+EMP0053;Employé 53;F;31;RH;Chargé RH;CDI;Actif;Nantes;44544;7;15;4.2;20/03/2017;
+EMP0054;Employé 54;M;60;Commercial;Chargé de clientèle;CDI;Retraité;Paris;43012;19;24;4.5;30/07/2005;04/12/2024
+EMP0055;Employé 55;M;34;RH;Assistant RH;Alternance;Licencié;Marseille;59830;2;3;4.2;31/07/2022;09/07/2024
+EMP0056;Employé 56;M;45;Finance;Analyste Financier;CDI;Démissionnaire;Lille;94317;2;20;3.4;31/05/2022;28/08/2024
+EMP0057;Employé 57;M;31;Finance;DAF;CDI;Licencié;Lille;51086;13;23;3.8;05/02/2011;23/10/2024
+EMP0058;Employé 58;M;42;Logistique;Responsable Logistique;CDD;Retraité;Bordeaux;39359;7;8;4.7;31/08/2017;04/09/2024
+EMP0059;Employé 59;M;53;Juridique;Responsable Juridique;CDI;Actif;Paris;74507;6;25;3.1;12/08/2018;
+EMP0060;Employé 60;F;48;Operations;Opérateur;Alternance;Actif;Paris;59499;15;22;3.7;05/01/2009;
+EMP0061;Employé 61;M;47;Logistique;Responsable Logistique;CDI;Actif;Paris;68135;7;21;4.0;05/05/2017;
+EMP0062;Employé 62;M;51;Marketing;CMO;Alternance;Actif;Lille;68189;8;8;3.1;26/09/2016;
+EMP0063;Employé 63;F;35;Marketing;Chargé Marketing;Alternance;Retraité;Paris;64241;15;23;4.0;11/04/2009;01/08/2024
+EMP0064;Employé 64;F;33;Operations;Opérateur;CDI;Actif;Bordeaux;29854;9;22;3.8;16/08/2015;
+EMP0065;Employé 65;F;53;RH;Chargé RH;Alternance;Actif;Lille;29607;3;18;3.2;01/05/2021;
+EMP0066;Employé 66;M;52;Logistique;Responsable Logistique;CDI;Actif;Toulouse;36564;3;12;3.7;12/03/2021;
+EMP0067;Employé 67;M;27;RH;Responsable RH;CDI;Retraité;Bordeaux;43525;7;17;4.4;26/02/2017;01/08/2024
+EMP0068;Employé 68;M;59;Commercial;Chargé de clientèle;CDD;Actif;Toulouse;68026;13;18;4.1;26/02/2011;
+EMP0069;Employé 69;F;37;Finance;Contrôleur de Gestion;CDI;Actif;Paris;37838;5;5;2.5;17/05/2019;
+EMP0070;Employé 70;M;40;Logistique;Responsable Logistique;CDI;Actif;Lille;37329;14;21;3.1;22/08/2010;
+EMP0071;Employé 71;F;31;Commercial;Chargé de clientèle;CDI;Démissionnaire;Lille;46643;8;2;2.6;29/07/2016;01/08/2024
+EMP0072;Employé 72;M;47;Operations;Directeur Opérations;CDI;Actif;Lille;93597;8;17;3.7;22/11/2016;
+EMP0073;Employé 73;M;27;RH;DRH;CDI;Démissionnaire;Lyon;30719;7;24;4.2;18/08/2017;06/08/2024
+EMP0074;Employé 74;M;33;RH;Responsable RH;CDD;Démissionnaire;Bordeaux;85132;18;20;4.5;20/11/2006;02/09/2024
+EMP0075;Employé 75;F;32;Marketing;CMO;CDI;Actif;Toulouse;81955;10;22;3.7;29/01/2014;
+EMP0076;Employé 76;F;38;Juridique;Avocat interne;CDI;Actif;Bordeaux;43194;10;24;3.5;15/04/2014;
+EMP0077;Employé 77;F;45;RH;DRH;CDD;Actif;Nantes;93338;19;20;3.6;10/12/2005;
+EMP0078;Employé 78;M;53;Commercial;Directeur Commercial;Alternance;Actif;Marseille;31783;3;20;4.0;01/09/2021;
+EMP0079;Employé 79;M;27;IT;Chef de Projet IT;Alternance;Actif;Marseille;42871;7;14;4.9;05/02/2017;
+EMP0080;Employé 80;M;52;IT;DSI;CDI;Démissionnaire;Marseille;59946;15;14;3.9;22/06/2009;13/11/2024
+EMP0081;Employé 81;M;54;IT;Développeur;CDI;Retraité;Bordeaux;28336;8;9;4.3;08/03/2016;05/08/2024
+EMP0082;Employé 82;M;43;Logistique;Logisticien;CDD;Démissionnaire;Bordeaux;77441;17;14;4.8;01/10/2007;06/07/2024
+EMP0083;Employé 83;M;42;Commercial;Chargé de clientèle;CDI;Retraité;Lyon;77968;15;12;5.0;05/02/2009;23/11/2024
+EMP0084;Employé 84;M;28;Logistique;Logisticien;CDI;Démissionnaire;Bordeaux;41069;14;16;4.8;28/12/2010;25/11/2024
+EMP0085;Employé 85;M;38;Juridique;Avocat interne;CDI;Actif;Toulouse;80098;10;20;2.7;19/07/2014;
+EMP0086;Employé 86;M;61;Juridique;Responsable Juridique;CDD;Retraité;Lyon;58771;2;20;4.2;07/08/2022;03/11/2024
+EMP0087;Employé 87;F;32;Finance;DAF;CDI;Retraité;Marseille;31794;9;1;3.3;06/12/2015;17/10/2024
+EMP0088;Employé 88;F;48;Marketing;Responsable Marketing;CDD;Actif;Nantes;51600;18;5;2.9;27/02/2006;
+EMP0089;Employé 89;M;36;Juridique;Avocat interne;CDI;Actif;Paris;61289;14;14;3.1;31/12/2010;
+EMP0090;Employé 90;F;44;Logistique;Responsable Logistique;Alternance;Actif;Marseille;67210;18;20;4.9;17/01/2006;
+EMP0091;Employé 91;M;52;Operations;Directeur Opérations;CDI;Actif;Toulouse;59091;3;12;3.9;13/03/2021;
+EMP0092;Employé 92;M;22;Operations;Chef d'équipe;CDI;Retraité;Bordeaux;34428;18;19;4.4;12/08/2006;03/11/2024
+EMP0093;Employé 93;M;30;Marketing;Community Manager;CDI;Démissionnaire;Lille;40735;20;20;4.1;31/07/2004;10/09/2024
+EMP0094;Employé 94;M;48;RH;Assistant RH;CDI;Actif;Bordeaux;54318;5;4;4.5;29/06/2019;
+EMP0095;Employé 95;M;40;Operations;Responsable Opérations;CDI;Retraité;Toulouse;43095;10;14;4.9;23/10/2014;04/11/2024
+EMP0096;Employé 96;M;38;Juridique;Avocat interne;CDI;Actif;Lyon;44199;17;14;3.4;26/01/2007;
+EMP0097;Employé 97;F;23;Operations;Directeur Opérations;CDI;Actif;Marseille;70992;19;19;3.1;04/12/2005;
+EMP0098;Employé 98;M;30;Logistique;Coordinateur Supply Chain;CDI;Licencié;Lyon;32877;1;9;5.0;03/11/2023;07/12/2024
+EMP0099;Employé 99;M;56;Commercial;Account Manager;CDD;Actif;Lille;48253;13;13;4.1;29/04/2011;
+EMP0100;Employé 100;M;50;Juridique;Responsable Juridique;CDI;Licencié;Paris;58947;14;11;2.7;18/01/2010;28/09/2024
+EMP0101;Employé 101;F;51;Marketing;Chargé Marketing;CDD;Actif;Lyon;55801;2;20;4.1;22/12/2022;
+EMP0102;Employé 102;M;26;RH;Assistant RH;CDI;Actif;Paris;55152;17;18;3.0;08/09/2007;
+EMP0103;Employé 103;M;31;Marketing;Community Manager;Alternance;Actif;Toulouse;60853;4;25;2.9;29/01/2020;
+EMP0104;Employé 104;F;42;RH;Responsable RH;CDI;Actif;Nantes;50838;0;8;2.6;30/05/2024;
+EMP0105;Employé 105;M;59;Finance;Analyste Financier;CDD;Actif;Nantes;87245;3;16;3.1;21/02/2021;
+EMP0106;Employé 106;F;52;RH;Assistant RH;CDD;Licencié;Lyon;83872;12;21;2.8;05/01/2012;09/09/2024
+EMP0107;Employé 107;F;30;Finance;Analyste Financier;CDI;Démissionnaire;Lyon;70622;8;12;5.0;06/04/2016;17/10/2024
+EMP0108;Employé 108;F;29;Logistique;Coordinateur Supply Chain;Alternance;Actif;Toulouse;56183;20;13;3.6;11/09/2004;
+EMP0109;Employé 109;M;28;Juridique;Responsable Juridique;CDD;Actif;Lille;83936;10;10;4.2;26/06/2014;
+EMP0110;Employé 110;F;49;IT;DSI;CDI;Actif;Lyon;76843;3;25;2.8;02/12/2021;
+EMP0111;Employé 111;M;25;Marketing;Chargé Marketing;CDD;Actif;Toulouse;68953;9;11;2.8;19/04/2015;
+EMP0112;Employé 112;F;57;Commercial;Account Manager;CDD;Actif;Bordeaux;43058;11;24;3.2;10/09/2013;
+EMP0113;Employé 113;M;60;Juridique;Avocat interne;Alternance;Démissionnaire;Lyon;31794;8;5;3.2;28/07/2016;06/10/2024
+EMP0114;Employé 114;F;47;Marketing;Chargé Marketing;CDI;Retraité;Nantes;46595;2;23;4.1;17/12/2022;08/12/2024
+EMP0115;Employé 115;M;45;Commercial;Chargé de clientèle;CDD;Actif;Paris;70517;9;24;4.9;04/03/2015;
+EMP0116;Employé 116;M;27;Finance;Analyste Financier;CDI;Actif;Lyon;86079;8;21;3.6;27/02/2016;
+EMP0117;Employé 117;M;44;Logistique;Responsable Logistique;CDI;Actif;Lyon;42534;13;9;4.2;07/03/2011;
+EMP0118;Employé 118;F;60;Logistique;Coordinateur Supply Chain;CDI;Actif;Marseille;29007;1;6;3.3;15/09/2023;
+EMP0119;Employé 119;F;53;IT;Chef de Projet IT;CDI;Actif;Lyon;51028;13;4;3.5;09/01/2011;
+EMP0120;Employé 120;F;23;Commercial;Directeur Commercial;CDI;Actif;Marseille;38205;14;10;3.9;17/03/2010;
+EMP0121;Employé 121;F;23;Juridique;Avocat interne;CDD;Actif;Marseille;50527;10;25;4.9;13/05/2014;
+EMP0122;Employé 122;F;49;Marketing;Chargé Marketing;CDD;Retraité;Paris;80487;18;16;2.7;31/07/2006;06/10/2024
+EMP0123;Employé 123;M;29;Commercial;Directeur Commercial;CDI;Actif;Lille;94840;16;6;4.8;10/07/2008;
+EMP0124;Employé 124;F;34;Marketing;Community Manager;CDI;Actif;Bordeaux;48036;5;24;4.4;25/11/2019;
+EMP0125;Employé 125;M;59;IT;DSI;CDD;Retraité;Toulouse;70363;14;20;3.3;24/05/2010;14/12/2024
+EMP0126;Employé 126;M;25;Logistique;Responsable Logistique;CDI;Retraité;Nantes;94497;11;2;3.3;17/05/2013;22/12/2024
+EMP0127;Employé 127;F;60;RH;Assistant RH;CDI;Actif;Nantes;78394;16;14;4.0;14/12/2008;
+EMP0128;Employé 128;M;54;Logistique;Coordinateur Supply Chain;CDI;Actif;Marseille;36109;4;14;2.8;10/07/2020;
+EMP0129;Employé 129;M;55;Finance;Contrôleur de Gestion;CDI;Actif;Marseille;48807;16;11;3.4;13/08/2008;
+EMP0130;Employé 130;M;62;Juridique;Responsable Juridique;CDI;Licencié;Lyon;71863;20;2;3.3;26/03/2004;11/07/2024
+EMP0131;Employé 131;M;31;Juridique;Responsable Juridique;CDI;Licencié;Toulouse;38682;10;18;4.2;08/07/2014;13/10/2024
+EMP0132;Employé 132;F;57;Juridique;Juriste;Alternance;Licencié;Bordeaux;71054;12;4;4.2;19/01/2012;19/08/2024
+EMP0133;Employé 133;F;41;Finance;DAF;Alternance;Actif;Bordeaux;56074;5;10;4.9;29/04/2019;
+EMP0134;Employé 134;F;28;Commercial;Account Manager;CDI;Actif;Bordeaux;32947;16;21;3.3;23/02/2008;
+EMP0135;Employé 135;F;61;IT;DSI;CDI;Actif;Toulouse;85366;5;1;3.5;21/01/2019;
+EMP0136;Employé 136;M;56;Commercial;Chargé de clientèle;Alternance;Actif;Paris;68562;7;25;4.5;25/09/2017;
+EMP0137;Employé 137;M;46;Marketing;CMO;CDD;Retraité;Toulouse;82874;16;5;4.5;01/03/2008;26/11/2024
+EMP0138;Employé 138;M;28;Operations;Opérateur;CDD;Retraité;Nantes;44341;16;9;2.7;14/10/2008;23/10/2024
+EMP0139;Employé 139;M;36;Logistique;Coordinateur Supply Chain;CDI;Retraité;Lyon;73820;14;0;3.5;16/06/2010;25/08/2024
+EMP0140;Employé 140;M;23;Marketing;Community Manager;CDD;Actif;Paris;40987;10;22;4.1;21/10/2014;
+EMP0141;Employé 141;M;30;IT;Développeur;CDI;Retraité;Lille;86799;15;19;2.5;25/11/2009;27/12/2024
+EMP0142;Employé 142;M;49;Operations;Responsable Opérations;CDI;Démissionnaire;Nantes;65762;3;7;3.3;08/12/2021;31/10/2024
+EMP0143;Employé 143;F;53;Juridique;Avocat interne;Alternance;Actif;Lyon;30154;19;20;3.8;04/09/2005;
+EMP0144;Employé 144;M;37;IT;Chef de Projet IT;CDD;Actif;Bordeaux;82600;18;5;4.2;23/11/2006;
+EMP0145;Employé 145;M;54;Marketing;Chargé Marketing;Alternance;Démissionnaire;Toulouse;30665;17;12;4.7;14/12/2007;22/07/2024
+EMP0146;Employé 146;F;26;Juridique;Responsable Juridique;CDI;Licencié;Bordeaux;59604;11;23;4.1;11/11/2013;05/08/2024
+EMP0147;Employé 147;M;33;Marketing;Community Manager;CDI;Actif;Bordeaux;90722;14;20;3.0;27/10/2010;
+EMP0148;Employé 148;F;34;Finance;DAF;CDI;Actif;Lyon;69365;1;9;3.8;29/03/2023;
+EMP0149;Employé 149;F;44;Logistique;Responsable Logistique;CDI;Retraité;Bordeaux;71506;1;8;2.8;27/06/2023;11/09/2024
+EMP0150;Employé 150;M;53;Juridique;Avocat interne;CDD;Actif;Paris;76148;15;25;3.8;23/11/2009;
+EMP0151;Employé 151;F;40;Juridique;Juriste;CDD;Démissionnaire;Nantes;41447;10;2;3.3;05/08/2014;14/10/2024
+EMP0152;Employé 152;M;50;Logistique;Coordinateur Supply Chain;CDD;Actif;Bordeaux;74210;1;19;5.0;14/08/2023;
+EMP0153;Employé 153;M;32;RH;Chargé RH;CDD;Actif;Toulouse;46714;0;19;4.2;21/05/2024;
+EMP0154;Employé 154;M;46;RH;Responsable RH;CDI;Actif;Bordeaux;32244;18;19;2.9;20/05/2006;
+EMP0155;Employé 155;F;30;Marketing;Responsable Marketing;CDD;Retraité;Nantes;76096;16;12;3.3;15/08/2008;29/10/2024
+EMP0156;Employé 156;M;57;Finance;Analyste Financier;CDI;Actif;Marseille;62311;3;24;3.2;18/05/2021;
+EMP0157;Employé 157;F;26;Commercial;Directeur Commercial;CDD;Actif;Paris;50630;14;22;3.6;21/11/2010;
+EMP0158;Employé 158;M;41;Marketing;Responsable Marketing;CDI;Démissionnaire;Bordeaux;50818;5;25;3.4;10/09/2019;30/11/2024
+EMP0159;Employé 159;M;45;Commercial;Account Manager;CDI;Retraité;Lyon;76353;17;14;4.5;29/03/2007;28/11/2024
+EMP0160;Employé 160;M;48;Finance;Analyste Financier;CDI;Actif;Nantes;37666;13;4;4.9;10/02/2011;
+EMP0161;Employé 161;M;30;Finance;DAF;CDD;Licencié;Bordeaux;51850;17;24;4.9;29/05/2007;25/08/2024
+EMP0162;Employé 162;M;32;RH;Chargé RH;Alternance;Actif;Paris;57552;10;11;4.9;13/04/2014;
+EMP0163;Employé 163;M;30;Operations;Opérateur;CDI;Actif;Bordeaux;67691;20;19;3.8;23/04/2004;
+EMP0164;Employé 164;M;60;IT;Data Analyst;CDI;Licencié;Lille;33399;10;0;2.7;09/02/2014;06/08/2024
+EMP0165;Employé 165;M;23;Operations;Responsable Opérations;Alternance;Actif;Lille;65967;15;20;4.9;02/05/2009;
+EMP0166;Employé 166;F;25;Commercial;Chargé de clientèle;CDI;Actif;Lille;85619;5;13;3.7;20/09/2019;
+EMP0167;Employé 167;M;44;Marketing;Community Manager;CDI;Retraité;Lille;45139;12;24;3.4;22/03/2012;04/12/2024
+EMP0168;Employé 168;M;37;Marketing;Community Manager;CDD;Actif;Marseille;40689;4;1;3.2;19/06/2020;
+EMP0169;Employé 169;M;42;Juridique;Juriste;CDI;Retraité;Nantes;48885;6;15;5.0;08/05/2018;26/08/2024
+EMP0170;Employé 170;M;51;Operations;Directeur Opérations;CDI;Actif;Nantes;56199;7;18;3.4;08/12/2017;
+EMP0171;Employé 171;M;56;Operations;Directeur Opérations;Alternance;Retraité;Bordeaux;42089;0;13;2.8;18/08/2024;29/09/2024
+EMP0172;Employé 172;F;57;Juridique;Responsable Juridique;CDI;Actif;Nantes;75516;6;17;3.2;19/06/2018;
+EMP0173;Employé 173;M;61;Logistique;Coordinateur Supply Chain;CDI;Retraité;Lille;44864;3;3;3.5;12/07/2021;11/08/2024
+EMP0174;Employé 174;M;54;Marketing;Community Manager;CDI;Démissionnaire;Marseille;33938;1;1;2.8;15/07/2023;01/09/2024
+EMP0175;Employé 175;F;61;Logistique;Logisticien;Alternance;Démissionnaire;Bordeaux;49299;10;12;5.0;03/08/2014;02/08/2024
+EMP0176;Employé 176;M;23;Marketing;CMO;Alternance;Actif;Toulouse;71416;11;21;2.8;04/06/2013;
+EMP0177;Employé 177;M;59;Operations;Opérateur;Alternance;Actif;Lille;57824;18;23;2.6;05/05/2006;
+EMP0178;Employé 178;F;58;IT;DSI;CDI;Retraité;Lyon;53006;3;0;3.6;01/06/2021;23/11/2024
+EMP0179;Employé 179;M;61;Juridique;Avocat interne;CDI;Actif;Toulouse;36163;15;22;2.8;20/09/2009;
+EMP0180;Employé 180;M;51;Marketing;CMO;Alternance;Actif;Paris;72869;17;17;3.4;22/01/2007;
+EMP0181;Employé 181;M;41;Operations;Directeur Opérations;CDI;Actif;Nantes;67008;7;24;3.2;18/09/2017;
+EMP0182;Employé 182;M;39;Logistique;Responsable Logistique;CDD;Actif;Toulouse;43974;9;18;4.2;23/06/2015;
+EMP0183;Employé 183;F;27;Juridique;Responsable Juridique;CDI;Actif;Bordeaux;85983;11;20;3.1;03/05/2013;
+EMP0184;Employé 184;M;39;Commercial;Account Manager;Alternance;Actif;Lille;42316;4;19;4.4;01/09/2020;
+EMP0185;Employé 185;F;28;Commercial;Commercial;Alternance;Actif;Lyon;71292;13;22;3.7;21/01/2011;
+EMP0186;Employé 186;M;52;IT;Développeur;Alternance;Actif;Lille;54143;15;24;4.9;24/07/2009;
+EMP0187;Employé 187;M;56;Operations;Opérateur;CDI;Licencié;Paris;50946;1;13;4.7;03/10/2023;22/12/2024
+EMP0188;Employé 188;M;22;Juridique;Responsable Juridique;CDI;Licencié;Lyon;42064;9;10;3.2;09/02/2015;14/08/2024
+EMP0189;Employé 189;M;29;Logistique;Logisticien;Alternance;Actif;Paris;49298;10;23;3.6;25/08/2014;
+EMP0190;Employé 190;M;34;IT;Développeur;CDI;Retraité;Nantes;81148;5;13;3.8;19/11/2019;20/09/2024
+EMP0191;Employé 191;M;22;Finance;Contrôleur de Gestion;CDI;Actif;Paris;78275;8;7;3.6;19/08/2016;
+EMP0192;Employé 192;M;38;Marketing;Responsable Marketing;Alternance;Licencié;Lyon;75127;20;22;3.1;30/01/2004;01/12/2024
+EMP0193;Employé 193;M;41;Logistique;Responsable Logistique;CDI;Actif;Lille;66671;3;11;4.0;11/09/2021;
+EMP0194;Employé 194;M;48;IT;DSI;CDI;Actif;Bordeaux;89712;17;24;3.8;30/01/2007;
+EMP0195;Employé 195;F;50;Commercial;Account Manager;Alternance;Retraité;Nantes;75419;16;2;4.8;08/11/2008;16/12/2024
+EMP0196;Employé 196;M;29;Commercial;Account Manager;CDI;Actif;Marseille;92071;6;2;4.7;19/05/2018;
+EMP0197;Employé 197;M;58;RH;DRH;CDI;Démissionnaire;Marseille;88604;1;21;4.5;21/12/2023;21/09/2024
+EMP0198;Employé 198;F;49;Operations;Opérateur;CDI;Démissionnaire;Lyon;36357;11;17;5.0;29/11/2013;02/09/2024
+EMP0199;Employé 199;F;48;RH;Assistant RH;CDD;Actif;Toulouse;78132;11;14;4.7;24/06/2013;
+EMP0200;Employé 200;M;33;Juridique;Juriste;Alternance;Actif;Lyon;79518;17;16;2.8;13/09/2007;

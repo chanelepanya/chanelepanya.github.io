@@ -760,8 +760,8 @@ nav {
           </p>
         </div>
         <div class="hero-btns">
-          <button class="btn btn-v" onclick="switchSection('projets',document.querySelectorAll('.nav-link')[1])">Voir mes projets →</button>
-          <button class="btn btn-outline" onclick="switchSection('contact',document.querySelectorAll('.nav-link')[4])">Me contacter</button>
+          <button class="btn btn-v" onclick="switchSection('projets',null)">Voir mes projets →</button>
+          <button class="btn btn-outline" onclick="switchSection('contact',null)">Me contacter</button>
         </div>
       </div>
 
@@ -826,34 +826,42 @@ nav {
           <div class="title-icon" style="background:rgba(6,214,160,0.15)">💼</div>
           Expériences
         </div>
-        <div class="xp-grid">
-          <div class="xp-card">
-            <div class="xp-date">Sept 2025 – Sept 2026</div>
-            <div class="xp-role">Data Analyst — Alternance</div>
-            <div class="xp-company">Boehringer Ingelheim</div>
-            <div class="xp-desc">Dashboards Power BI, automatisation de reportings, accompagnement métiers dans un environnement pharma international.</div>
-            <div class="mini-tags"><span class="mini-tag">Power BI</span><span class="mini-tag">SQL</span><span class="mini-tag">Automate</span><span class="mini-tag">Agile</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
+          <div class="xp-card" style="border-color:rgba(139,92,246,0.3)">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+              <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#8b5cf6,#f472b6);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0">💊</div>
+              <div><div class="xp-role">Data Analyst — Alternance</div><div class="xp-company">Boehringer Ingelheim · Lyon</div></div>
+            </div>
+            <div class="xp-date" style="margin-bottom:10px">Sept 2025 – Sept 2026 · En cours</div>
+            <div class="xp-desc">Conception de dashboards Power BI, automatisation de reportings et accompagnement des équipes métiers dans un environnement pharmaceutique international.</div>
+            <div class="mini-tags"><span class="mini-tag">Power BI</span><span class="mini-tag">SQL</span><span class="mini-tag">Power Automate</span><span class="mini-tag">Agile</span></div>
           </div>
-          <div class="xp-card">
-            <div class="xp-date teal">Sept 2024 – Août 2025</div>
-            <div class="xp-role">Data Analyst — Alternance</div>
-            <div class="xp-company teal">Volvo Trucks</div>
-            <div class="xp-desc">Reportings automatisés, dashboards opérationnels, amélioration continue via Kaizen dans le secteur industriel.</div>
-            <div class="mini-tags"><span class="mini-tag t">Power BI</span><span class="mini-tag t">Power Query</span><span class="mini-tag t">Kaizen</span></div>
+          <div class="xp-card" style="border-color:rgba(6,214,160,0.3)">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+              <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#06d6a0,#06b6d4);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0">🚛</div>
+              <div><div class="xp-role">Data Analyst — Alternance</div><div class="xp-company teal">Volvo Trucks · Lyon</div></div>
+            </div>
+            <div class="xp-date teal" style="margin-bottom:10px">Sept 2024 – Août 2025</div>
+            <div class="xp-desc">Reportings automatisés, dashboards de suivi opérationnel et amélioration continue via la méthode Kaizen dans le secteur industriel.</div>
+            <div class="mini-tags"><span class="mini-tag t">Power BI</span><span class="mini-tag t">Power Query</span><span class="mini-tag t">Excel</span><span class="mini-tag t">Kaizen</span></div>
           </div>
-          <div class="xp-card">
-            <div class="xp-date gray">Nov 2022 – Sept 2023</div>
-            <div class="xp-role">Assistante Gestion Patrimoine</div>
-            <div class="xp-company gray">Cabinet indépendant</div>
-            <div class="xp-desc">Analyse financière et modélisation patrimoniale avec Excel avancé pour des clients particuliers.</div>
-            <div class="mini-tags"><span class="mini-tag g">Excel</span><span class="mini-tag g">Finance</span></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+          <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:16px;display:flex;align-items:center;gap:12px">
+            <div style="width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0">🏦</div>
+            <div>
+              <div style="font-size:13px;font-weight:600;margin-bottom:2px">Assistante Gestion de Patrimoine</div>
+              <div style="font-size:11px;color:var(--muted);margin-bottom:7px">Cabinet indépendant · Nov 2022 – Sept 2023</div>
+              <div class="mini-tags"><span class="mini-tag g">Excel avancé</span><span class="mini-tag g">Analyse financière</span></div>
+            </div>
           </div>
-          <div class="xp-card">
-            <div class="xp-date gray">Oct 2020 – Août 2022</div>
-            <div class="xp-role">Téléprospectrice — Alternance</div>
-            <div class="xp-company gray">Green Planet</div>
-            <div class="xp-desc">Gestion d'un portefeuille de prospects, reporting KPIs commerciaux et suivi de performances.</div>
-            <div class="mini-tags"><span class="mini-tag g">Reporting</span><span class="mini-tag g">KPIs</span></div>
+          <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:16px;display:flex;align-items:center;gap:12px">
+            <div style="width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0">📞</div>
+            <div>
+              <div style="font-size:13px;font-weight:600;margin-bottom:2px">Téléprospectrice — Alternance</div>
+              <div style="font-size:11px;color:var(--muted);margin-bottom:7px">Green Planet · Oct 2020 – Août 2022</div>
+              <div class="mini-tags"><span class="mini-tag g">Reporting</span><span class="mini-tag g">KPIs commerciaux</span></div>
+            </div>
           </div>
         </div>
       </div>
@@ -1157,10 +1165,15 @@ nav {
 function switchSection(id, btn) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.nav-link').forEach(n => n.classList.remove('active'));
-  document.getElementById('s-' + id).classList.add('active');
-  btn.classList.add('active');
-  if (id === 'accueil') animateSkills();
-  if (id === 'objectifs') animateObj();
+  const target = document.getElementById('s-' + id);
+  if (!target) return;
+  target.classList.add('active');
+  document.querySelectorAll('.nav-link').forEach(n => {
+    const oc = n.getAttribute('onclick') || '';
+    if (oc.indexOf(id) !== -1) n.classList.add('active');
+  });
+  if (id === 'accueil') { sa = false; animateSkills(); }
+  if (id === 'objectifs') { oa = false; animateObj(); }
   window.scrollTo(0, 0);
 }
 
@@ -1168,19 +1181,27 @@ function switchSection(id, btn) {
 let sa = false;
 function animateSkills() {
   if (sa) return; sa = true;
+  document.querySelectorAll('.skill-fill').forEach(f => { f.style.transition = 'none'; f.style.width = '0%'; });
   setTimeout(() => {
-    document.querySelectorAll('.skill-fill').forEach(f => f.style.width = f.dataset.w + '%');
-  }, 300);
+    document.querySelectorAll('.skill-fill').forEach(f => {
+      f.style.transition = 'width 1.3s cubic-bezier(0.4,0,0.2,1)';
+      f.style.width = f.dataset.w + '%';
+    });
+  }, 100);
 }
-setTimeout(() => animateSkills(), 500);
+setTimeout(() => animateSkills(), 600);
 
 // ── OBJ ──
 let oa = false;
 function animateObj() {
   if (oa) return; oa = true;
+  document.querySelectorAll('.opf').forEach(f => { f.style.transition = 'none'; f.style.width = '0%'; });
   setTimeout(() => {
-    document.querySelectorAll('.opf').forEach(f => f.style.width = f.dataset.w + '%');
-  }, 300);
+    document.querySelectorAll('.opf').forEach(f => {
+      f.style.transition = 'width 1.2s ease';
+      f.style.width = f.dataset.w + '%';
+    });
+  }, 100);
 }
 
 // ── MODAL ──
@@ -1320,3 +1341,7 @@ function checkSql(){
     if(sli<sqlL.length-1) setTimeout(()=>{sli++;renderSql();},1500);
     else res.textContent=`🎉 Félicitations ! ${slsc} pts sur 100 — tu maîtrises le SQL !`;
   } 
+}
+</script>
+</body>
+</html>

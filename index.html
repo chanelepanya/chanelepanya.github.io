@@ -719,6 +719,29 @@ nav {
   .contact-bento, .contact-hero { grid-column: span 1; }
   .certif-grid { grid-template-columns: 1fr; }
 }
+
+.filter-btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 9px 18px; border-radius: 100px;
+  font-size: 13px; font-weight: 600;
+  cursor: pointer; border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03); color: var(--muted);
+  transition: all 0.25s; font-family: 'Raleway', sans-serif;
+  white-space: nowrap;
+}
+.filter-btn:hover {
+  color: var(--text);
+  border-color: rgba(139,92,246,0.3);
+  background: rgba(139,92,246,0.06);
+  transform: translateY(-1px);
+}
+.filter-btn.active {
+  background: rgba(139,92,246,0.15);
+  color: var(--v2);
+  border-color: rgba(139,92,246,0.4);
+  box-shadow: 0 0 20px rgba(139,92,246,0.15);
+}
+#filter-bar { align-items: center; }
 </style>
 </head>
 <body>
@@ -895,70 +918,393 @@ nav {
       <h1 style="font-family:'Raleway',sans-serif;font-size:40px;font-weight:900;letter-spacing:-0.5px;margin-bottom:6px">
         Projets <span style="color:var(--v2)">Réalisés</span>
       </h1>
-      <p style="color:var(--muted);font-size:14px">Cas pratiques sur données réelles ou publiques · En cours de construction</p>
+      <p style="color:var(--muted);font-size:14px">20 projets sur données réelles ou simulées · Power BI · SQL · Power Automate · Power Apps</p>
     </div>
-    <div class="proj-bento">
-      <div class="proj-card">
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px" id="filter-bar">
+      <button class="filter-btn active" onclick="filterProjs('tous',this)">
+        <span style="font-size:14px">⬡</span> Tous <span style="font-size:11px;opacity:0.7;margin-left:2px">20</span>
+      </button>
+      <button class="filter-btn" onclick="filterProjs('pbi',this)">
+        <span style="font-size:14px">📊</span> Power BI <span style="font-size:11px;opacity:0.7;margin-left:2px">5</span>
+      </button>
+      <button class="filter-btn" onclick="filterProjs('sql',this)">
+        <span style="font-size:14px">🗃️</span> SQL <span style="font-size:11px;opacity:0.7;margin-left:2px">5</span>
+      </button>
+      <button class="filter-btn" onclick="filterProjs('auto',this)">
+        <span style="font-size:14px">⚡</span> Power Automate <span style="font-size:11px;opacity:0.7;margin-left:2px">7</span>
+      </button>
+      <button class="filter-btn" onclick="filterProjs('apps',this)">
+        <span style="font-size:14px">📱</span> Power Apps <span style="font-size:11px;opacity:0.7;margin-left:2px">3</span>
+      </button>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px" id="proj-grid">
+
+      <!-- PBI 1 -->
+      <div class="proj-card" data-cat="pbi">
         <div class="proj-thumb pt-v">
           <div class="proj-chips"><span class="pchip">Power BI</span><span class="pchip">RH</span></div>
-          <div class="proj-cat-pill">Visualisation</div>
-          📈
+          <div class="proj-cat-pill">Visualisation</div>📊
         </div>
         <div class="proj-body">
           <div class="proj-title">Dashboard RH & Effectifs</div>
-          <div class="proj-desc">Analyse du turnover, absentéisme et pyramide des âges sur un dataset RH public. KPIs interactifs et filtres dynamiques Power BI.</div>
+          <div class="proj-desc">Turnover, absentéisme, pyramide des âges. 200 employés, 5 pages Power BI.</div>
           <div class="proj-footer">
-            <div class="mini-tags"><span class="mini-tag">Power BI</span><span class="mini-tag">DAX</span><span class="mini-tag">Power Query</span></div>
+            <div class="mini-tags"><span class="mini-tag">Power BI</span><span class="mini-tag">DAX</span></div>
             <div style="display:flex;gap:8px;align-items:center;margin-top:10px">
               <a href="projet-dashboard-rh.html" class="btn-sm-v" style="text-decoration:none">👁 Voir</a>
-              <span class="wip">En cours</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="proj-card">
+      <!-- PBI 2 -->
+      <div class="proj-card" data-cat="pbi">
+        <div class="proj-thumb pt-v">
+          <div class="proj-chips"><span class="pchip">Power BI</span><span class="pchip">E-commerce</span></div>
+          <div class="proj-cat-pill">Visualisation</div>🛒
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">Dashboard Ventes E-commerce</div>
+          <div class="proj-desc">CA, panier moyen, régions, canaux. 1 000 commandes sur 12 mois.</div>
+          <div class="proj-footer">
+            <div class="mini-tags"><span class="mini-tag">Power BI</span><span class="mini-tag">DAX</span></div>
+            <div style="display:flex;gap:8px;align-items:center;margin-top:10px">
+              <a href="projet-pbi-ecommerce.html" class="btn-sm-v" style="text-decoration:none">👁 Voir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PBI 3 -->
+      <div class="proj-card" data-cat="pbi">
+        <div class="proj-thumb pt-v">
+          <div class="proj-chips"><span class="pchip">Power BI</span><span class="pchip">Logistique</span></div>
+          <div class="proj-cat-pill">Visualisation</div>🚛
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">Dashboard Supply Chain</div>
+          <div class="proj-desc">Stocks, délais fournisseurs, alertes rupture. Inspiré Volvo Trucks.</div>
+          <div class="proj-footer">
+            <div class="mini-tags"><span class="mini-tag">Power BI</span><span class="mini-tag">Stock</span></div>
+            <div style="display:flex;gap:8px;align-items:center;margin-top:10px">
+              <a href="projet-pbi-supply.html" class="btn-sm-v" style="text-decoration:none">👁 Voir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PBI 4 -->
+      <div class="proj-card" data-cat="pbi">
+        <div class="proj-thumb pt-v">
+          <div class="proj-chips"><span class="pchip">Power BI</span><span class="pchip">Marketing</span></div>
+          <div class="proj-cat-pill">Visualisation</div>📈
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">Dashboard Marketing</div>
+          <div class="proj-desc">CTR, ROAS, conversions. 12 campagnes, données GA4 intégrées.</div>
+          <div class="proj-footer">
+            <div class="mini-tags"><span class="mini-tag">Power BI</span><span class="mini-tag">GA4</span></div>
+            <div style="display:flex;gap:8px;align-items:center;margin-top:10px">
+              <a href="projet-pbi-marketing.html" class="btn-sm-v" style="text-decoration:none">👁 Voir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PBI 5 -->
+      <div class="proj-card" data-cat="pbi">
+        <div class="proj-thumb pt-v">
+          <div class="proj-chips"><span class="pchip">Power BI</span><span class="pchip">Finance</span></div>
+          <div class="proj-cat-pill">Visualisation</div>💰
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">Dashboard Finance & Budget</div>
+          <div class="proj-desc">Budget vs réel, waterfall chart, prévisions FY. 1.5M€ sous contrôle.</div>
+          <div class="proj-footer">
+            <div class="mini-tags"><span class="mini-tag">Power BI</span><span class="mini-tag">DAX</span></div>
+            <div style="display:flex;gap:8px;align-items:center;margin-top:10px">
+              <a href="projet-pbi-finance.html" class="btn-sm-v" style="text-decoration:none">👁 Voir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SQL 1 -->
+      <div class="proj-card" data-cat="sql">
         <div class="proj-thumb pt-g">
           <div class="proj-chips"><span class="pchip">SQL</span><span class="pchip">E-commerce</span></div>
-          <div class="proj-cat-pill" style="background:rgba(6,214,160,0.7)">Analyse</div>
-          🔍
+          <div class="proj-cat-pill" style="background:rgba(6,214,160,0.7)">Analyse</div>🗃️
         </div>
         <div class="proj-body">
-          <div class="proj-title">Analyse SQL — Ventes E-commerce</div>
-          <div class="proj-desc">Segmentation clients, top produits, analyse de cohortes et panier moyen sur un dataset Kaggle e-commerce public.</div>
+          <div class="proj-title">Analyse SQL — Ventes</div>
+          <div class="proj-desc">Top produits, cohortes, panier moyen. 15 requêtes documentées.</div>
           <div class="proj-footer">
-            <div class="mini-tags"><span class="mini-tag t">SQL</span><span class="mini-tag t">Excel</span><span class="mini-tag t">Power BI</span></div>
+            <div class="mini-tags"><span class="mini-tag t">SQL</span><span class="mini-tag t">Window functions</span></div>
             <div style="display:flex;gap:8px;align-items:center;margin-top:10px">
-              <button class="btn-sm-v">👁 Voir</button>
-              <span class="wip">En cours</span>
+              <a href="projet-sql-ventes.html" class="btn-sm-v" style="text-decoration:none">👁 Voir</a>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="proj-card">
-        <div class="proj-thumb pt-o">
-          <div class="proj-chips"><span class="pchip">Automate</span><span class="pchip">No-code</span></div>
-          <div class="proj-cat-pill" style="background:rgba(249,115,22,0.7)">Automatisation</div>
-          ⚡
+      <!-- SQL 2 -->
+      <div class="proj-card" data-cat="sql">
+        <div class="proj-thumb pt-g">
+          <div class="proj-chips"><span class="pchip">SQL</span><span class="pchip">CRM</span></div>
+          <div class="proj-cat-pill" style="background:rgba(6,214,160,0.7)">Analyse</div>👥
         </div>
         <div class="proj-body">
-          <div class="proj-title">Reporting Auto — Power Automate</div>
-          <div class="proj-desc">Workflow complet : collecte hebdo → mise à jour Excel → génération rapport → envoi email automatique. Zéro action manuelle.</div>
+          <div class="proj-title">Segmentation RFM Clients</div>
+          <div class="proj-desc">Récence, Fréquence, Montant. 5 segments, scoring NTILE, plan d'action.</div>
           <div class="proj-footer">
-            <div class="mini-tags"><span class="mini-tag" style="color:var(--o);border-color:rgba(249,115,22,0.2);background:rgba(249,115,22,0.08)">Power Automate</span><span class="mini-tag" style="color:var(--o);border-color:rgba(249,115,22,0.2);background:rgba(249,115,22,0.08)">Power Apps</span></div>
+            <div class="mini-tags"><span class="mini-tag t">SQL</span><span class="mini-tag t">NTILE</span></div>
             <div style="display:flex;gap:8px;align-items:center;margin-top:10px">
-              <button class="btn-sm-v">👁 Voir</button>
-              <span class="wip">En cours</span>
+              <a href="projet-sql-rfm.html" class="btn-sm-v" style="text-decoration:none">👁 Voir</a>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- SQL 3 -->
+      <div class="proj-card" data-cat="sql">
+        <div class="proj-thumb pt-g">
+          <div class="proj-chips"><span class="pchip">SQL</span><span class="pchip">RH</span></div>
+          <div class="proj-cat-pill" style="background:rgba(6,214,160,0.7)">Analyse</div>👔
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">Analyse SQL — Données RH</div>
+          <div class="proj-desc">Turnover, démographie, corrélation satisfaction. 12 requêtes avancées.</div>
+          <div class="proj-footer">
+            <div class="mini-tags"><span class="mini-tag t">SQL</span><span class="mini-tag t">CASE WHEN</span></div>
+            <div style="display:flex;gap:8px;align-items:center;margin-top:10px">
+              <a href="projet-sql-rh.html" class="btn-sm-v" style="text-decoration:none">👁 Voir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SQL 4 -->
+      <div class="proj-card" data-cat="sql">
+        <div class="proj-thumb pt-g">
+          <div class="proj-chips"><span class="pchip">SQL</span><span class="pchip">Produits</span></div>
+          <div class="proj-cat-pill" style="background:rgba(6,214,160,0.7)">Analyse</div>📦
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">Performance Produits</div>
+          <div class="proj-desc">Rentabilité par catégorie, élasticité prix, RANK top/flop produits.</div>
+          <div class="proj-footer">
+            <div class="mini-tags"><span class="mini-tag t">SQL</span><span class="mini-tag t">RANK</span></div>
+            <div style="display:flex;gap:8px;align-items:center;margin-top:10px">
+              <a href="projet-sql-produits.html" class="btn-sm-v" style="text-decoration:none">👁 Voir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SQL 5 -->
+      <div class="proj-card" data-cat="sql">
+        <div class="proj-thumb pt-g">
+          <div class="proj-chips"><span class="pchip">SQL</span><span class="pchip">Web Analytics</span></div>
+          <div class="proj-cat-pill" style="background:rgba(6,214,160,0.7)">Analyse</div>🌐
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">Comportement Utilisateurs Web</div>
+          <div class="proj-desc">Funnel d'achat, taux rebond, pages performantes. Optimisation UX.</div>
+          <div class="proj-footer">
+            <div class="mini-tags"><span class="mini-tag t">SQL</span><span class="mini-tag t">LAG</span></div>
+            <div style="display:flex;gap:8px;align-items:center;margin-top:10px">
+              <a href="projet-sql-logs.html" class="btn-sm-v" style="text-decoration:none">👁 Voir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AUTO 1 -->
+      <div class="proj-card" data-cat="auto">
+        <div class="proj-thumb pt-o">
+          <div class="proj-chips"><span class="pchip">Automate</span><span class="pchip">Reporting</span></div>
+          <div class="proj-cat-pill" style="background:rgba(249,115,22,0.7)">Automatisation</div>⚡
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">Reporting Hebdo Automatique</div>
+          <div class="proj-desc">Collecte → Excel → Email. 156h économisées/an. 0 intervention manuelle.</div>
+          <div class="proj-footer">
+            <div class="mini-tags"><span class="mini-tag" style="color:#fb923c;border-color:rgba(249,115,22,0.2);background:rgba(249,115,22,0.08)">Power Automate</span></div>
+            <div style="display:flex;gap:8px;align-items:center;margin-top:10px">
+              <a href="projet-auto-reporting.html" class="btn-sm-v" style="text-decoration:none">👁 Voir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AUTO 2 -->
+      <div class="proj-card" data-cat="auto">
+        <div class="proj-thumb pt-o">
+          <div class="proj-chips"><span class="pchip">Automate</span><span class="pchip">KPI</span></div>
+          <div class="proj-cat-pill" style="background:rgba(249,115,22,0.7)">Automatisation</div>🔔
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">Alertes KPI Temps Réel</div>
+          <div class="proj-desc">Monitoring 24/7, 3 niveaux de criticité, notifications Teams + Email.</div>
+          <div class="proj-footer">
+            <div class="mini-tags"><span class="mini-tag" style="color:#fb923c;border-color:rgba(249,115,22,0.2);background:rgba(249,115,22,0.08)">Power Automate</span></div>
+            <div style="display:flex;gap:8px;align-items:center;margin-top:10px">
+              <a href="projet-auto-alertes.html" class="btn-sm-v" style="text-decoration:none">👁 Voir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AUTO 3 -->
+      <div class="proj-card" data-cat="auto">
+        <div class="proj-thumb pt-o">
+          <div class="proj-chips"><span class="pchip">Automate</span><span class="pchip">Qualité</span></div>
+          <div class="proj-cat-pill" style="background:rgba(249,115,22,0.7)">Automatisation</div>✅
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">Validation Données Auto</div>
+          <div class="proj-desc">15 règles de qualité, correction automatique, -97% d'erreurs de saisie.</div>
+          <div class="proj-footer">
+            <div class="mini-tags"><span class="mini-tag" style="color:#fb923c;border-color:rgba(249,115,22,0.2);background:rgba(249,115,22,0.08)">Power Automate</span></div>
+            <div style="display:flex;gap:8px;align-items:center;margin-top:10px">
+              <a href="projet-auto-validation.html" class="btn-sm-v" style="text-decoration:none">👁 Voir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AUTO 4 -->
+      <div class="proj-card" data-cat="auto">
+        <div class="proj-thumb pt-o">
+          <div class="proj-chips"><span class="pchip">Automate</span><span class="pchip">RH</span></div>
+          <div class="proj-cat-pill" style="background:rgba(249,115,22,0.7)">Automatisation</div>🚀
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">Onboarding RH Automatisé</div>
+          <div class="proj-desc">12 étapes auto, 5 apps connectées. 8h → 30min de travail RH.</div>
+          <div class="proj-footer">
+            <div class="mini-tags"><span class="mini-tag" style="color:#fb923c;border-color:rgba(249,115,22,0.2);background:rgba(249,115,22,0.08)">Power Automate</span></div>
+            <div style="display:flex;gap:8px;align-items:center;margin-top:10px">
+              <a href="projet-auto-onboarding.html" class="btn-sm-v" style="text-decoration:none">👁 Voir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AUTO 5 -->
+      <div class="proj-card" data-cat="auto">
+        <div class="proj-thumb pt-o">
+          <div class="proj-chips"><span class="pchip">Automate</span><span class="pchip">Forms</span></div>
+          <div class="proj-cat-pill" style="background:rgba(249,115,22,0.7)">Automatisation</div>📝
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">Forms → Excel → Dashboard</div>
+          <div class="proj-desc">Pipeline Forms → Power Automate → Excel → Power BI. 0 double saisie.</div>
+          <div class="proj-footer">
+            <div class="mini-tags"><span class="mini-tag" style="color:#fb923c;border-color:rgba(249,115,22,0.2);background:rgba(249,115,22,0.08)">Power Automate</span></div>
+            <div style="display:flex;gap:8px;align-items:center;margin-top:10px">
+              <a href="projet-auto-formulaire.html" class="btn-sm-v" style="text-decoration:none">👁 Voir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AUTO 6 -->
+      <div class="proj-card" data-cat="auto">
+        <div class="proj-thumb pt-o">
+          <div class="proj-chips"><span class="pchip">Automate</span><span class="pchip">Data Quality</span></div>
+          <div class="proj-cat-pill" style="background:rgba(249,115,22,0.7)">Automatisation</div>🔍
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">Détection Anomalies Données</div>
+          <div class="proj-desc">5 types d'anomalies, cycle 30min, précision 97%. Alerte en 45min.</div>
+          <div class="proj-footer">
+            <div class="mini-tags"><span class="mini-tag" style="color:#fb923c;border-color:rgba(249,115,22,0.2);background:rgba(249,115,22,0.08)">Power Automate</span></div>
+            <div style="display:flex;gap:8px;align-items:center;margin-top:10px">
+              <a href="projet-auto-anomalies.html" class="btn-sm-v" style="text-decoration:none">👁 Voir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AUTO 7 -->
+      <div class="proj-card" data-cat="auto">
+        <div class="proj-thumb pt-o">
+          <div class="proj-chips"><span class="pchip">Automate</span><span class="pchip">Integration</span></div>
+          <div class="proj-cat-pill" style="background:rgba(249,115,22,0.7)">Automatisation</div>🔄
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">Synchronisation Multi-Sources</div>
+          <div class="proj-desc">4 systèmes synchronisés en temps réel. 0 incohérence de données.</div>
+          <div class="proj-footer">
+            <div class="mini-tags"><span class="mini-tag" style="color:#fb923c;border-color:rgba(249,115,22,0.2);background:rgba(249,115,22,0.08)">Power Automate</span></div>
+            <div style="display:flex;gap:8px;align-items:center;margin-top:10px">
+              <a href="projet-auto-synchro.html" class="btn-sm-v" style="text-decoration:none">👁 Voir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- APPS 1 -->
+      <div class="proj-card" data-cat="apps">
+        <div class="proj-thumb pt-pink">
+          <div class="proj-chips"><span class="pchip">Power Apps</span><span class="pchip">Mobile</span></div>
+          <div class="proj-cat-pill" style="background:rgba(244,114,182,0.7)">Application</div>📱
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">App Suivi KPIs Terrain</div>
+          <div class="proj-desc">15 KPIs, mode hors-ligne, 3 rôles, 95% d'adoption en 2 semaines.</div>
+          <div class="proj-footer">
+            <div class="mini-tags"><span class="mini-tag" style="color:#f472b6;border-color:rgba(244,114,182,0.2);background:rgba(244,114,182,0.08)">Power Apps</span></div>
+            <div style="display:flex;gap:8px;align-items:center;margin-top:10px">
+              <a href="projet-apps-kpi.html" class="btn-sm-v" style="text-decoration:none">👁 Voir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- APPS 2 -->
+      <div class="proj-card" data-cat="apps">
+        <div class="proj-thumb pt-pink">
+          <div class="proj-chips"><span class="pchip">Power Apps</span><span class="pchip">Qualité</span></div>
+          <div class="proj-cat-pill" style="background:rgba(244,114,182,0.7)">Application</div>⚙️
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">App Incidents Qualité</div>
+          <div class="proj-desc">Photo + GPS, workflow 3 niveaux, délai 48h → 2h. SLA +32%.</div>
+          <div class="proj-footer">
+            <div class="mini-tags"><span class="mini-tag" style="color:#f472b6;border-color:rgba(244,114,182,0.2);background:rgba(244,114,182,0.08)">Power Apps</span></div>
+            <div style="display:flex;gap:8px;align-items:center;margin-top:10px">
+              <a href="projet-apps-incidents.html" class="btn-sm-v" style="text-decoration:none">👁 Voir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- APPS 3 -->
+      <div class="proj-card" data-cat="apps">
+        <div class="proj-thumb pt-pink">
+          <div class="proj-chips"><span class="pchip">Power Apps</span><span class="pchip">RH</span></div>
+          <div class="proj-cat-pill" style="background:rgba(244,114,182,0.7)">Application</div>🏖️
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">App Gestion Congés</div>
+          <div class="proj-desc">3 profils, calcul soldes auto, sync Teams. -90% emails RH.</div>
+          <div class="proj-footer">
+            <div class="mini-tags"><span class="mini-tag" style="color:#f472b6;border-color:rgba(244,114,182,0.2);background:rgba(244,114,182,0.08)">Power Apps</span></div>
+            <div style="display:flex;gap:8px;align-items:center;margin-top:10px">
+              <a href="projet-apps-conges.html" class="btn-sm-v" style="text-decoration:none">👁 Voir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <!-- ── MINI-JEUX ── -->
-  <div class="section" id="s-jeux">
+<div class="section" id="s-jeux">
     <div style="margin-bottom:32px">
       <h1 style="font-family:'Raleway',sans-serif;font-size:40px;font-weight:900;letter-spacing:-0.5px;margin-bottom:6px">
         Mini-<span style="color:var(--pk)">Jeux</span>
